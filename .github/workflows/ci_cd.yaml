@@ -63,6 +63,7 @@ jobs:
   # Package the tested container images with version tags and push them to a container registry.
   Release:
     runs-on: ubuntu-latest
+    environment: test
 
     # Ensure the Release job only runs if Test pass
     needs: Test
@@ -90,6 +91,7 @@ jobs:
   # Deploy the container image to a container orchestrator, such as K8s.
   Deploy:
     runs-on: ubuntu-latest
+    environment: test
 
     # Ensure the Deploy job only runs if the Release is successful
     needs: Release
