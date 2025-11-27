@@ -10,6 +10,7 @@ jobs:
   # Build a packaged version of the application that can run in any Docker environment.
   Build:
     runs-on: ubuntu-latest
+    environment: test
 
     steps:
       - name: Checkout Code
